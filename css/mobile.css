@@ -1,0 +1,26 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+ul,li,p{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+.clearfix::after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+body{
+	font: 16px '微软雅黑';
+	background: #09132c;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
