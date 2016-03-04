@@ -46,9 +46,8 @@ div,body,p{margin:0;padding:0;}
  })
  function f()
 {
-	 $(".slider .item").each(function(i){
-		 alert($(this).css("flex"));
-		 if($(this).css("flex")=="1 1 0%"){
+	 $(".slider .item").each(function(i){		 
+		 if($(this).css("flex")=="1 1 0%" || $(this).css("flex")=="1 1 0px"){
 			 $(this).css("flex","0");
 			 if(i==3){
 				 $(".slider .item").first().css("flex","1");
