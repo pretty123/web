@@ -43,7 +43,7 @@ div,body,p{margin:0;padding:0;}
 <script src="js/zepto.js"></script>
 <script>
  $(function(){	
-	setInterval("f()",2000) 
+	setInterval("f()",3000) 
  })
  function f()
 {
@@ -55,7 +55,7 @@ div,body,p{margin:0;padding:0;}
 			 }else{
 				 $(this).next().css("flex","1");
 			 }		 
-			 ClearInterval("f()",5000) 		 
+			 ClearInterval("f()",3000) 		 
 		 }
 	 });
 }
@@ -68,7 +68,7 @@ div,body,p{margin:0;padding:0;}
 			 }else{
 				 $(this).prev().css("flex","1");
 			 }			 
-			 ClearInterval("f()",5000) 		 
+			 ClearInterval("f()") 		 
 		 }
 	 });
  }
