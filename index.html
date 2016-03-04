@@ -31,10 +31,10 @@ div,body,p{margin:0;padding:0;}
  <div class="item" style="flex:1;"><span>...</span></div>
 </div>
 <div class="slider" id="touchPad">
-  <div class="item" style="flex:1;">终有一天，天下太平！</div>
-  <div class="item" style="flex:0;">终有一天，人间天堂！</div>
-  <div class="item" style="flex:0;">终有一天，你我喜乐！</div>
-  <div class="item" style="flex:0;">终有一天，发如雪！</div>
+  <div class="item" style="flex:1;">1.终有一天，天下太平！</div>
+  <div class="item" style="flex:0;">2.终有一天，人间天堂！</div>
+  <div class="item" style="flex:0;">3.终有一天，你我喜乐！</div>
+  <div class="item" style="flex:0;">4.终有一天，发如雪！</div>
 </div>
 <div id="ball" class="ball"></div>
 <div id="clock"></div>
@@ -54,11 +54,24 @@ div,body,p{margin:0;padding:0;}
 				 $(".slider .item").first().css("flex","1");
 			 }else{
 				 $(this).next().css("flex","1");
-			 }			 
-			 ClearInterval("f()",2000) 		 
+			 }		 
+			 ClearInterval("f()",5000) 		 
 		 }
 	 });
 }
+ function g(){
+	 $(".slider .item").each(function(i){		 
+		 if($(this).css("flex")=="1 1 0%" || $(this).css("flex")=="1 1 0px"){
+			 $(this).css("flex","0");
+			 if(i==0){
+				 $(".slider .item:nth-child(4)").css("flex","1");
+			 }else{
+				 $(this).prev().css("flex","1");
+			 }			 
+			 ClearInterval("f()",5000) 		 
+		 }
+	 });
+ }
 </script>
 <script>
 var touchpad = document.querySelector('#touchPad'),
@@ -136,10 +149,13 @@ if(getDist(point_start,point_end) > SWIPE_DISTANCE && time_start- time_end < SWI
    var dir = getSwipeDirection(point_end,point_start);
    //touchPad.innerHTML = 'swipe'+dir;
    switch(dir){
-   case 'right':touchPad.innerHTML = 'right';
-   
+   case 'right':
+	   //touchPad.innerHTML = 'right';
+   g();
    break;
-   case 'left':touchPad.innerHTML = 'left';
+   case 'left':
+	   //touchPad.innerHTML = 'left';
+	   f();
    break;
    }
 }
